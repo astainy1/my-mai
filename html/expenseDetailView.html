@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="Christian A. Harris" />
+        <title>MyMai | Expense Detail</title>
+        <link href="https://fonts.cdnfonts.com/css/jua" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="../css/styles1.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../bootstrap-5.3.3/css/bootstrap.min.css">
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    
+    
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3 text-white" href="index.html" style="font-family: 'jua', sans-serif;">MyMai</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars" style="color: #06947A"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn" id="btnNavbarSearch" type="button" style="background: #06947A;"><i class="fas fa-search text-white"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Profile</a></li>
+                        <!-- <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav text-white" id="sidenavAccordion" style="background-color: #06947A;">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Analysis & Report</div>
+                            <a class="nav-link text-white" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt "></i></div>
+                                Dashboard
+                            </a>
+
+                            <!-- Exxpense Module starts -->
+                            <div class="sb-sidenav-menu-heading">Expense</div>
+                            <a class="nav-link collapsed text-white" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon text-white"><i class="fas fa-columns"></i></div>
+                                Expense
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav text-white">
+                                    <a class="nav-link text-white" href="../html/addExpense.html">Add Expense</a>
+                                    <a class="nav-link text-white" href="../html/expenseDetailView.html">Expense Detail</a>
+                                    <a class="nav-link text-white" href="../html/expenseReport.html">Expense Report</a>
+                                    <a class="nav-link text-white" href="../html/charts.html">Expense Report Charts</a>
+                                </nav>
+                            </div>
+
+                            <!-- Expense Module ends -->
+                            
+                            <!-- Budgetting module starts -->
+                            <div class="sb-sidenav-menu-heading">Budget</div>
+                            <a class="nav-link collapsed text-white" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon text-white"><i class="fas fa-columns"></i></div>
+                                Budget
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav text-white">
+                                    <a class="nav-link text-white" href="../html/budgetingSetting.html">Set Budget</a>
+                                    <a class="nav-link text-white" href="../html/budgetSummaryView.html">Budget Summary</a>
+                                </nav>
+                            </div>
+                            <!-- Budgetting Module ends -->
+                            
+                            <!-- <div class="sb-sidenav-menu-heading">Something</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="../html/tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a> -->
+                        </div>
+                    </div>
+                    <!-- <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        <span id="displayUserName"> Astainy </span>
+                    </div> -->
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Expense Detail</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Expense Detail</li>
+                        </ol>
+                        <br>
+                        
+                        <!-- Head Inpust Section Starts Here -->
+    <div class="container-lg">
+        <div class="row mt-4 d-flex justify-content-space-around">
+            <div class="col-6">
+                <div class=" d-flex justify-content-start align-items-center">
+                    <div class="img-fluid me-2">
+                        <img src="../images/user_1.png" alt="User_profile">
+                    </div>
+                    <div>
+                        <strong>John Doe</strong> <br>
+                        <span>Occupation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group">
+                    <span class="input-group-text bg-secondary text-light fw-bold" id="basic-addon1">Total Expense: </span>
+                    <input type="number" class="form-control" placeholder="LRD $599.00" aria-label="Amount" aria-describedby="basic-addon1" disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 d-flex justify-content-space-between align-items-center">
+            <div class="col-4">
+                    <div class="input-group">
+                        <span class="input-group-text bg-secondary text-light fw-bold" id="basic-addon1">From </span>
+                        <input type="date" class="form-control" aria-label="Datefrom" aria-describedby="basic-addon1">
+                    </div>
+            </div>
+            <div class="col-4">
+                    <div class="input-group">
+                        <span class="input-group-text bg-secondary text-light fw-bold" id="basic-addon1">To </span>
+                        <input type="date" class="form-control" aria-label="Dateto" aria-describedby="basic-addon1">
+                    </div>
+            </div>
+            <div class="col-4">
+                <div class="d-grid d-block-sm">
+                    <button class="btn btn-success my-2 text-uppercase full-view-btn"><strong>Full View</strong></button>
+                    <!-- <button class="btn btn-primary" type="button">Button</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Head Inpust Section Ends Here -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Expense Table
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Category</th>
+                                            <th>Description</th>
+                                            <th>Amount</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Category</th>
+                                            <th>Description</th>
+                                            <th>Amount</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            				
+                                            <td></td>
+                                            <td>Transportation</td>
+                                            <td>Duala to Monrovia</td>
+                                            <td>200.00</td>
+                                            <td>11/05/2024</td>
+                                            <td>
+                                                <button class="btn btn-success" disabled><i class="fa fa-pencil-square"></i></button>
+                                                <button class="btn btn-danger" disabled><i class="fa fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            				
+                                            <td>2</td>
+                                            <td>Transportation</td>
+                                            <td>Duala to Monrovia</td>
+                                            <td>200.00</td>
+                                            <td>11/05/2024</td>
+                                            <td>
+                                                <button class="btn btn-success" disabled><i class="fa fa-pencil-square"></i></button>
+                                                <button class="btn btn-danger" disabled><i class="fa fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            				
+                                            <td>3</td>
+                                            <td>Transportation</td>
+                                            <td>Duala to Monrovia</td>
+                                            <td>200.00</td>
+                                            <td>11/05/2024</td>
+                                            <td>
+                                                <button class="btn btn-success" disabled><i class="fa fa-pencil-square"></i></button>
+                                                <button class="btn btn-danger" disabled><i class="fa fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            				
+                                            <td>4</td>
+                                            <td>Transportation</td>
+                                            <td>Duala to Monrovia</td>
+                                            <td>200.00</td>
+                                            <td>11/05/2024</td>
+                                            <td>
+                                                <button class="btn btn-success" disabled><i class="fa fa-pencil-square"></i></button>
+                                                <button class="btn btn-danger" disabled><i class="fa fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            				
+                                            <td>5</td>
+                                            <td>Transportation</td>
+                                            <td>Duala to Monrovia</td>
+                                            <td>200.00</td>
+                                            <td>11/05/2024</td>
+                                            <td>
+                                                <button class="btn btn-success" disabled><i class="fa fa-pencil-square"></i></button>
+                                                <button class="btn btn-danger" disabled><i class="fa fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            				
+                                            <td>6</td>
+                                            <td>Transportation</td>
+                                            <td>Duala to Monrovia</td>
+                                            <td>200.00</td>
+                                            <td>11/05/2024</td>
+                                            <td>
+                                                <button class="btn btn-success" disabled><i class="fa fa-pencil-square"></i></button>
+                                                <button class="btn btn-danger" disabled><i class="fa fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Developed by: <span>Astainy</span></div>
+                            <div>
+                                <small class="lead"> V.1.0</small>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/demo/chart-area-demo.js"></script>
+        <script src="../assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="../js/datatables-simple-demo.js"></script>
+        <script src="../bootstrap-5.3.3/js/bootstrap.bundle.js"></script>
+    </body>
+</html>
